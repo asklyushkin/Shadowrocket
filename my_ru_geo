@@ -1,14 +1,4 @@
-# @misha-tgshv, built on Tue Jun 16 02:35:01  2026
 [General]
-
-# Быстрая настройка Shadowrocket:
-# Включите английский язык Настройки → Language → English
-# Идем в Home и нажимаем «+» или Add Server
-# Добавьте любой подходящий конфиг: Config → «+» или Download from URL
-# В настройках выберите способ проверки Settings → Advanced → Connect
-# Нажмите Connectivity Test и если сервер доступен, то нажмите на ползунок
-# При первом запуске появится запрос на установку VPN-конфигурации — нажмите «OK» и «Разрешить».
-
 # Включение HTTPS-декрипции:
 # В Config → ⓘ, → HTTPS Decryption → Certificate → Generate A New CA Certificate → Install CA Certificate to System
 # В настройках системы — скачанные профили — «Установить».
@@ -40,18 +30,6 @@ dns-fallback-system = false
 # Если прямое разрешение DNS не работает, использовать прокси-сервер для DNS-запросов
 dns-direct-fallback-proxy = true
 
-# Перезаписывает системный DNS на указанные DNS-over-TLS и DNS-over-HTTPS серверы. 
-# Порядок выбора серверов по приоритетности: 
-#  1. IPv6 DoT сервер Cloudflare (основной и резервный), 
-#  2. IPv4 DoT сервер Cloudflare (основной и резервный), 
-#  3. DoH сервер Cloudflare, 
-#  4. IPv6 Cloudflare (основной и резервный),
-#  5. IPv4 Cloudflare (основной и резервный),
-#  6. IPv6 DoT сервер Google (основной и резервный), 
-#  7. IPv4 DoT сервер Google (основной и резервный), 
-#  8. DoH сервер Google, 
-#  9. IPv6 Google (основной и резервный),
-# 10. IPv4 Google (основной и резервный).
 # Вы можете выбрать альтернативный DOH/DOT — https://github.com/curl/curl/wiki/DNS-over-HTTPS
 dns-server = tls://2606:4700:4700::1112:853,tls://2606:4700:4700::1002:853,tls://1.1.1.1:853,tls://1.0.0.1:853,https://security.cloudflare-dns.com/dns-query,tls://2001:4860:4860::8888:853,tls://2001:4860:4860::8844:853,tls://8.8.8.8:853,tls://8.8.4.4:853,https://dns.google/dns-query
 
@@ -86,10 +64,6 @@ always-reject-url-rewrite = false
 
 # Как поступать с UDP-трафиком, если политика узла не поддерживает UDP-перенаправление: отбрасывать (REJECT) или направлять напрямую (DIRECT). Выбор зависит от желаемого поведения и возможности узла.
 udp-policy-not-supported-behaviour = REJECT
-
-# Позволяет включать внешние конфигурационные файлы. Удобно для больших конфигов, переиспользования настроек.
-# Если параметры или правила в подключаемом файле пересекаются с основным, приоритет обычно имеет основной файл (где прописано include), но детали могут зависеть от реализации.
-include = sr_ru_extended.conf
 
 # URL-адрес обновления файла конфигурации
 update-url = https://raw.githubusercontent.com/asklyushkin/Shadowrocket/refs/heads/main/my_ru_geo
